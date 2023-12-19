@@ -1,18 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class whiteBoard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Texture2D texture;
+    public Vector2 textureSize = new Vector2(2048, 2048);
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        var r = GetComponent<Renderer>();
+        texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
+        r.material.mainTexture = texture;
     }
 }
